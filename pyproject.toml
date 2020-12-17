@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "prettyfi"
+version = "0.1.0"
+description = "Simple tool to prettify your files"
+authors = ["Pavel Kirilin <win10@list.ru>"]
+repository = "https://github.com/s3rius/prettyfi"
+homepage = "https://github.com/s3rius/prettyfi"
+readme = "README.rst"
+
+packages = [
+    { include = "prettyfi" },
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3.8",
+    "Topic :: Utilities"
+]
+
+keywords = [
+    "Files",
+    "Pretty",
+    "Tool",
+    "CodeStyle"
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pydantic = "^1.7.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.1"
+
+[tool.poetry.scripts]
+prettyfi = "prettyfi.main:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
