@@ -31,7 +31,7 @@ optional arguments:
 
     prettyfi "prettyfi/main.py" "pyproject.toml" # Will make this files beautiful
 
-Prettify configuration
+Prettyfi configuration
 **********************
 
 Default config file location is "~/.prettyfirc".
