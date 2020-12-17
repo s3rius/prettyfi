@@ -15,7 +15,7 @@ default_rules = {
     ".toml": 'toml-sort --in-place "{file}"',
 }
 
-default_config_path = Path("~/.sortrc")
+default_config_path = Path("~/.prettyfirc")
 
 
 class SorterConfig(BaseModel):

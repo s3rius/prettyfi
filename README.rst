@@ -3,7 +3,7 @@
 .. |py_versions| image:: https://img.shields.io/pypi/pyversions/prettyfi?style=flat-square
     :alt: python versions
 
-.. |build_statuses| image:: https://img.shields.io/github/workflow/status/s3rius/prettyfi/Testing%and%publish?style=flat-square
+.. |build_statuses| image:: https://img.shields.io/github/workflow/status/s3rius/prettyfi/Testing%20and%20publish?style=flat-square
     :alt: build status
 
 .. |pypi_versions| image:: https://img.shields.io/pypi/v/prettyfi?style=flat-square
@@ -27,7 +27,7 @@ optional arguments:
     --help                  show help message and exit
     --config=config_path    path to configuration file
 
-Default config file location is "~/.sortrc".
+Default config file location is "~/.prettyfirc".
 
 Config file format:
 
