@@ -10,8 +10,8 @@
     :alt: pypi version
     :target: https://pypi.org/project/prettyfi/
 
-Prettify
-========
+Prettify your files with one command
+====================================
 
 Prettyfi usage
 **************
@@ -26,6 +26,13 @@ positional arguments:
 optional arguments:
     --help                  show help message and exit
     --config=config_path    path to configuration file
+
+.. code:: bash
+
+    prettyfi "prettyfi/main.py" "pyproject.toml" # Will make this files beautiful
+
+Prettify configuration
+**********************
 
 Default config file location is "~/.prettyfirc".
 
