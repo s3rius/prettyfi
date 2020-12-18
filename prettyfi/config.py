@@ -25,6 +25,7 @@ class SorterConfig(BaseModel):
 
     config: Path = Field(default_config_path)
     rules: Dict[str, str] = default_rules
+    recursive: bool = False
 
     def get_rule(self, filename: str) -> Optional[str]:
         """
