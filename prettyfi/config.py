@@ -16,7 +16,7 @@ default_rules = {
     ".json": 'jq . "{file}" > "{file}_tmp" && mv "{file}_tmp" "{file}"',
     ".sql": 'sqlformat -k upper "{file}" > "{file}_tmp" && mv "{file}_tmp" "{file}"',
     ".xml": (
-        'xmllint --format "{file}" ' '--output "{file}_tmp" && mv "{file}_tmp" "{file}"'
+        'xmllint --format "{file}" --output "{file}_tmp" && mv "{file}_tmp" "{file}"'
     ),
 }
 
@@ -42,6 +42,10 @@ class SorterConfig(BaseModel):
         return None
 
     def startup_actions(self) -> None:
+        """
+        Actions to collect user rules and create
+        default config file if it not exits.
+        """
         if self.config == default_config_path and not self.config.exists():
             with self.config.expanduser().open("w") as f:
                 for pattern, rule in default_rules.items():
