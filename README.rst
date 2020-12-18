@@ -16,7 +16,7 @@ Prettify your files with one command
 Prettyfi usage
 **************
 
-usage: prettyfi [-h] [-c CONFIG] files [files ...]
+usage: prettyfi [-h] [-c CONFIG] [-r] files [files ...]
 
 Simple utility to make your files prettier.
 
@@ -24,9 +24,9 @@ positional arguments:
   files                 Files to sort
 
 optional arguments:
-    --help                  show help message and exit
-    --config=config_path    path to configuration file
-    -r, --recursive         Traverse dirs recursively
+  -h, --help                    show this help message and exit
+  -c CONFIG, --config CONFIG    path to configuration file
+  -r, --recursive               recursively traverse directories
 
 .. code:: bash
 
