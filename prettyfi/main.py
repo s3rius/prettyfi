@@ -57,7 +57,7 @@ def sort_file(file: Path, rule: str) -> None:
 
 def prettify_files(files: List[Path], config: SorterConfig) -> None:
     """
-    Acrual prettier.
+    Actual prettier.
     If recursive option is set, it will traverse every dir recursively.
     """
     working_queue = deque(files)

@@ -18,6 +18,9 @@ default_rules = {
     ".xml": (
         'xmllint --format "{file}" --output "{file}_tmp" && mv "{file}_tmp" "{file}"'
     ),
+    ".tf": 'terraform fmt "{file}"',
+    ".rs": 'rustfmt --edition 2018 "{file}"',
+    ".md": 'mdformat "{file}"',
 }
 
 default_config_path = Path("~/.prettyfirc").expanduser()
