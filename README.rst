@@ -26,6 +26,7 @@ positional arguments:
 optional arguments:
     --help                  show help message and exit
     --config=config_path    path to configuration file
+    -r, --recursive         Traverse dirs recursively
 
 .. code:: bash
 
