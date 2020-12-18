@@ -7,6 +7,7 @@ you provide. It can be any kind of command to run on your pc.
 
 import argparse
 import subprocess
+from collections import deque
 from pathlib import Path
 from typing import Any, Dict, List
 
@@ -59,12 +60,14 @@ def prettify_files(files: List[Path], config: SorterConfig) -> None:
     Acrual prettier.
     If recursive option is set, it will traverse every dir recursively.
     """
-    for file in files:
-        if file.is_dir() and config.recursive:
-            prettify_files(list(file.iterdir()), config)
-            continue
+    working_queue = deque(files)
 
-        if rule := config.get_rule(file.name):
+    while working_queue:
+        file = working_queue.popleft()
+
+        if file.is_dir() and config.recursive:
+            working_queue.extend(file.iterdir())
+        elif rule := config.get_rule(file.name):
             print(f"formatting {file.expanduser()}")
             sort_file(file, rule)
 
