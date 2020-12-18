@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "prettyfi"
-version = "0.1.6"
+version = "0.1.7"
 description = "Simple tool to prettify your files"
 authors = ["Pavel Kirilin <win10@list.ru>"]
 repository = "https://github.com/s3rius/prettyfi"

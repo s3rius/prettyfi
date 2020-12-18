@@ -13,6 +13,11 @@ from prettyfi.exceptions import UnknownRuleFormat
 default_rules = {
     ".py": 'black "{file}" && isort "{file}"',
     ".toml": 'toml-sort --in-place "{file}"',
+    ".json": 'jq . "{file}" > "{file}_tmp" && mv "{file}_tmp" "{file}"',
+    ".sql": 'sqlformat -k upper "{file}" > "{file}_tmp" && mv "{file}_tmp" "{file}"',
+    ".xml": (
+        'xmllint --format "{file}" ' '--output "{file}_tmp" && mv "{file}_tmp" "{file}"'
+    ),
 }
 
 default_config_path = Path("~/.prettyfirc")
@@ -37,7 +42,7 @@ class SorterConfig(BaseModel):
         return None
 
     def startup_actions(self) -> None:
-        if self.config == default_config_path and not self.config.expanduser().exists():
+        if self.config == default_config_path and not self.config.exists():
             with self.config.expanduser().open("w") as f:
                 for pattern, rule in default_rules.items():
                     f.write(f"{pattern} $ {rule}\n")

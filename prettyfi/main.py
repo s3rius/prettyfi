@@ -75,6 +75,7 @@ def main() -> None:
     """
     args = parse_args()
     sorter_conf = SorterConfig(**args)
+    sorter_conf.startup_actions()
     try:
         prettify_files(args["files"], sorter_conf)
     except UnknownRuleFormat as exception:
