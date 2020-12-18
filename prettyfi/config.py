@@ -20,7 +20,7 @@ default_rules = {
     ),
 }
 
-default_config_path = Path("~/.prettyfirc")
+default_config_path = Path("~/.prettyfirc").expanduser()
 
 
 class SorterConfig(BaseModel):
